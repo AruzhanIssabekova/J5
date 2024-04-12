@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW5</title>
+</head>
+<body>
+<script>
+    class Auto {
+      constructor(money, repair) {
+        this.money = money;
+        this.repair = repair;
+      }
+
+      repairc() {
+        const repairp = (this.money / this.repair);
+        return `Можно отремонтировать машину ${repairp} раз`;
+
+      }
+    }
+    const money = parseInt(prompt("Введите кол-во денег:"));
+    const repair = parseInt(prompt("Введите цену ремонта:"));
+    const car = new Auto(money, repair);
+    document.write(car.repairc());
+</script>
+</body>
+</html>

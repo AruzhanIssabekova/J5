@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW5.2</title>
+</head>
+<body>
+<script>
+    class Building {
+      constructor(height, width, length, floors, hasBasement) {
+        this.height = height;
+        this.width = width;
+        this.length = length;
+        this.floors = floors;
+        this.hasBasement = hasBasement;
+      }
+      area() {
+        let area = this.floors*(this.width * this.length);
+        if (this.hasBasement) {
+           area += this.width * this.length;
+        }
+        return area;
+      }
+      addFloor() {
+        this.floors++;
+      }
+      removeFloor() {
+        if (this.floors > 1) {
+           this.floors--;
+        } else {
+           document.write("Нельзя удалить этаж, так как здание имеет только один этаж.");
+        }
+      }
+    }
+    const height = parseInt(prompt("Высота:"));
+    const width = parseInt(prompt("Ширина:"));
+    const length = parseInt(prompt("Длина:"));
+    const floors = parseInt(prompt("Кол-во этажей:"));
+    const hasBasement = prompt("Есть ли подземный этаж?");
+    const b = new Building(height, width, length, floors, hasBasement);
+    document.write(b.area());
+</script>
+</body>
+</html>
